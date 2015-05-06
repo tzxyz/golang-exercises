@@ -6,7 +6,7 @@ type Collection interface {
 	Size() int
 	IsEmpty() bool
 	Contains(interface{}) bool
-	Add()
+	Add(val interface{})
 	Delete(interface{}) interface{}
 	Clear()
 }
@@ -145,6 +145,15 @@ func (l *LinkedList) Get(index int) interface{} {
 	return nil
 }
 
+// 设置
+func (l *LinkedList) Set(index int, val interface{}) interface{} {
+	return nil
+}
+
+func (l *LinkedList) Insert(index int, val interface{}) {
+
+}
+
 // 索引是否合法
 func (l *LinkedList) checkIndex(index int) bool {
 	if index >= 0 && index < l.size {
@@ -152,10 +161,6 @@ func (l *LinkedList) checkIndex(index int) bool {
 	}
 	return false
 }
-
-// func (l *LinkedList) getNode(val interface{}) {
-
-// }
 
 func (l *LinkedList) Contains(val interface{}) bool {
 	return l.IndexOf(val) != -1

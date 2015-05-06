@@ -6,6 +6,49 @@ import (
 )
 
 func main() {
+	TestArrayList()
+	// TestHashSet()
+}
+
+func TestArrayList() {
+	// fmt.Println(collection.DEFAULT_EMPTY_SLICE)
+	arrayList := collection.NewArrayList()
+	// arrayList.Add("aaa")
+	// fmt.Println(arrayList)
+	fmt.Println(arrayList.Containes("aaa"))
+	fmt.Println(arrayList.Size())
+	fmt.Println(arrayList.IsEmpty())
+
+	arrayList.Add("vvv")
+	arrayList.Delete("vvv") // ERROR
+
+	fmt.Println(arrayList)
+	fmt.Println(arrayList.Size())
+}
+
+func TestHashSet() {
+	hashset := collection.NewHashSet()
+
+	hashset.Add("a")
+	hashset.Add("a")
+	hashset.Add("gg")
+
+	fmt.Println(hashset)
+
+	fmt.Printf("size is %d", hashset.Size())
+
+	fmt.Printf("is empty? %v\n", hashset.IsEmpty())
+
+	fmt.Printf("contains gg? %v\n", hashset.Contains("gg"))
+
+	// hashset.Clear()
+	// fmt.Println(hashset)
+
+	hashset.Delete("gg")
+	fmt.Println(hashset)
+}
+
+func TestLinkedList() {
 	linkedList := collection.NewLinkedList()
 
 	linkedList.Add("a")

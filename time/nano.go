@@ -8,8 +8,8 @@ import (
 func main() {
 	// println(NowTime())
 	// println("log ----->>> ")
-	// DatePattern()
-	Ticker()
+	DatePattern()
+	// Ticker()
 }
 
 //返回当前时间毫秒值
@@ -28,7 +28,7 @@ func Ticker() {
 }
 
 func DatePattern() {
-	t, err := time.Parse("yyyy-MM-dd HH:mm:ss", "2015-01-12 20:22:55")
+	t, err := time.Parse("2006-01-02 15:04:05", "2015-01-12 20:22:55")
 	fmt.Println(t)
 	fmt.Println(err)
 }
