@@ -2,7 +2,6 @@ package collection
 
 import (
 	"fmt"
-	"strings"
 )
 
 // 这样是个单例，应该不能这样
@@ -17,7 +16,7 @@ type ArrayList struct {
 
 func NewArrayList() *ArrayList {
 	return &ArrayList{
-		elements: make([]interface{}, DEFAULT_ARRAY_SIZE),
+		elements: make([]interface{}, 0, DEFAULT_ARRAY_SIZE),
 		size:     0,
 	}
 }
@@ -30,11 +29,12 @@ func (this *ArrayList) IsEmpty() bool {
 	return this.size == 0
 }
 
-func (this *ArrayList) Containes(val interface{}) bool {
+func (this *ArrayList) Contains(val interface{}) bool {
 	return this.IndexOf(val) != -1
 }
 
 // TODO 不能使用append()，slice默认有零值
+// ok 可以初始化长度
 func (this *ArrayList) Add(val interface{}) {
 	this.elements = append(this.elements, val)
 	this.size++

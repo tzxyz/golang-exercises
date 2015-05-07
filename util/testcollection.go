@@ -20,7 +20,7 @@ func TestArrayList() {
 	fmt.Println(arrayList.IsEmpty())
 
 	arrayList.Add("vvv")
-	arrayList.Delete("vvv") // ERROR
+	// arrayList.Delete("vvv") // ERROR
 
 	fmt.Println(arrayList)
 	fmt.Println(arrayList.Size())

@@ -14,34 +14,34 @@ func NewHashSet() *HashSet {
 	}
 }
 
-func (h *HashSet) Size() int {
-	return len(h.hashmap)
+func (this *HashSet) Size() int {
+	return len(this.hashmap)
 }
 
-func (h *HashSet) IsEmpty() bool {
-	return len(h.hashmap) == 0
+func (this *HashSet) IsEmpty() bool {
+	return len(this.hashmap) == 0
 }
 
-func (h *HashSet) Contains(val interface{}) bool {
-	_, ok := h.hashmap[val]
+func (this *HashSet) Contains(val interface{}) bool {
+	_, ok := this.hashmap[val]
 	return ok
 }
 
-func (h *HashSet) Add(val interface{}) {
-	h.hashmap[val] = true
+func (this *HashSet) Add(val interface{}) {
+	this.hashmap[val] = true
 }
 
-func (h *HashSet) Clear() {
-	h.hashmap = make(map[interface{}]bool)
+func (this *HashSet) Clear() {
+	this.hashmap = make(map[interface{}]bool)
 }
 
-func (h *HashSet) Delete(val interface{}) {
-	delete(h.hashmap, val)
+func (this *HashSet) Delete(val interface{}) {
+	delete(this.hashmap, val)
 }
 
-func (h *HashSet) String() string {
+func (this *HashSet) String() string {
 	ret := "["
-	for k, _ := range h.hashmap {
+	for k, _ := range this.hashmap {
 		ret += fmt.Sprintf("%v, ", k)
 	}
 	ret += "]"
