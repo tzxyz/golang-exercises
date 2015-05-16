@@ -31,9 +31,6 @@ public class User {
     
     @Column(name = "BG_PORTRAIT", length = 255)
     private String portrait;
-
-    @Id(col = "a")
-    private String id;
     
     public String getUid() {
         return uid;

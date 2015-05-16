@@ -78,14 +78,14 @@ func main() {
 	// 	fmt.Println("s", s)
 	// }
 
-	// for i := 1; ; {
-	// 	line, err := reader.ReadString('\n') //我日
-	// 	if err != nil || err == io.EOF {
-	// 		break
-	// 	}
-	// 	fmt.Println("linenum:", i, line)
-	// 	i += 1
-	// }
+	for i := 1; ; {
+		line, err := reader.ReadString('\n') //我日
+		if err != nil || err == io.EOF {
+			break
+		}
+		fmt.Println("linenum:", i, line)
+		i += 1
+	}
 
 	packageName = bytes.Split(packageName, []byte(" "))[1]
 	packageName = packageName[:len(packageName)-1]
